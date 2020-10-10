@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: lint
-        run: swiftlint
+        run: swiftlint --strict
 
       - name: Select Xcode version
         run: sudo xcode-select -switch /Applications/Xcode_12.app
