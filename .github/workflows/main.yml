@@ -18,8 +18,6 @@ jobs:
         run: swiftlint
 
       - name: Build and test
-        run: |
-          cd TestRepo
-          xcodebuild clean test -project TestRepo.xcodeproj -scheme TestRepo -destination "${destination}"
+        run: xcodebuild clean test -project TestRepo.xcodeproj -scheme TestRepo -destination "${destination}"
         env: 
          destination: ${{ matrix.destination }}
