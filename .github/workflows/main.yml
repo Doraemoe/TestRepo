@@ -17,6 +17,9 @@ jobs:
       - name: lint
         run: swiftlint
 
+      - name: Select Xcode version
+        run: sudo xcode-select -switch /Applications/Xcode_12.app
+      
       - name: Build and test
         run: xcodebuild clean test -project TestRepo.xcodeproj -scheme TestRepo -destination "${destination}"
         env: 
